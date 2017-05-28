@@ -1,0 +1,23 @@
+SELECT user_name, user_editcount, user_registration, rev_timestamp
+FROM `user`
+JOIN user_groups ug1
+	ON user_id = ug1.ug_user AND ug1.ug_group = 'extendedconfirmed'
+LEFT JOIN user_groups ug2
+	ON user_id = ug2.ug_user AND ug2.ug_group = 'sysop'
+LEFT JOIN user_groups ug3
+	ON user_id = ug3.ug_user AND ug3.ug_group = 'bot'
+LEFT JOIN ipblocks
+	ON user_id = ipb_user
+JOIN revision_userindex
+	ON rev_id = (SELECT rev_id FROM revision_userindex
+                 WHERE user_id = rev_user
+                 ORDER BY rev_timestamp DESC
+                 LIMIT 1)
+WHERE user_editcount >= $count
+	AND user_registration <= $starttime
+	AND ug2.ug_group IS NULL
+	AND ug3.ug_group IS NULL
+    AND ipb_id IS NULL
+    AND rev_timestamp >= $activetime 
+ORDER BY $sortby $sortorder
+LIMIT 50;

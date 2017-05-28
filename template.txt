@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Candidate Search - Results</title>
+    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Results for the Candidate Search</h1>
+    <nav style="font-size: 80%"><a href="https://tools.wmflabs.org/apersonbot/">Tools</a> &gt; <a href="https://tools.wmflabs.org/apersonbot/candidate-search/">Candidate Search</a> &gt; <b>Results</b></nav>
+    <p><a href="index.html">&larr; New search</a></p>
+    $content
+    <p><a href="index.html">&larr; New search</a></p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/User:Enterprisey" title="Enterprisey's user page on the English Wikipedia">Enterprisey</a>
+      (<a href="https://en.wikipedia.org/wiki/User_talk:Enterprisey" title="Enterprisey's talk page on the English Wikipedia">talk!</a>)
+    </footer>
+  </body>
+</html>

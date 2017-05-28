@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Candidate Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Candidate Search</h1>
+    <nav style="font-size: 80%"><a href="https://tools.wmflabs.org/apersonbot/">Tools</a> &gt; <b>Candidate Search</b></nav>
+    <p>
+      Search for users that match certain criteria. All time durations can be decimals (for example, you can enter 2.25 for tenure).
+    </p>
+    <form action="search.py" method="get">
+      <table>
+        <tr>
+	  <th><label for="count">Minimum edit count</label></th>
+          <td><input type="number" id="count" name="count" placeholder="10,000" required /></td>
+        </tr>
+        <tr>
+          <th><label for="tenure">Tenure<br /><small>(in years)</small></label></th>
+          <td><input type="number" id="tenure" name="tenure" placeholder="2" /></td>
+	</tr>
+	<tr>
+	  <th><label for="last-activity">Time of last edit<br /><small>(months ago)</small></label></th>
+	  <td><input type="number" id="last-activity" name="last-activity" placeholder="2" /></td>
+	</tr>
+	<tr>
+          <th><label>Sort by</label></th>
+	  <td><table><tr>
+		<td>
+                  <input type="radio" name="sort-by" value="registration" id="sort-by-registration" checked />
+                  <label for="sort-by-registration">Registration</label>
+                  <br />
+                  <input type="radio" name="sort-by" value="count" id="sort-by-count" />
+                  <label for="sort-by-count">Count</label>
+		</td>
+		<td>
+		  <input type="radio" name="sort-order" value="ASC" id="sort-order-ascending" checked />
+		  <label for="sort-order-ascending">Ascending</label>
+		  <br />
+		  <input type="radio" name="sort-order" value="DESC" id="sort-order-descending" />
+		  <label for="sort-order-descending">Descending</label>
+		</td>
+	  </tr></table></td>
+        <tr>
+          <td colspan="2"><input class="mw-ui-button mw-ui-constructive" type="submit" /></td>
+        </tr>
+      </table>
+    </form>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/User:Enterprisey" title="Enterprisey's user page on the English Wikipedia">Enterprisey</a>
+      (<a href="https://en.wikipedia.org/wiki/User_talk:Enterprisey" title="Enterprisey's talk page on the English Wikipedia">talk!</a>)
+    </footer>
+  </body>
+</html>
